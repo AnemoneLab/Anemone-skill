@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  sui-swap-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: chainrex/sui-swap-service:1.0.0
+    container_name: sui-swap-service
+    restart: unless-stopped
+    ports:
+      - "3456:3456"
+    environment:
+      - NODE_ENV=production
